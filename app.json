@@ -1,0 +1,29 @@
+{
+  "name": "Telegram Voting Giveaway Bot",
+  "description": "A Heroku-deployable Telegram bot for voting giveaways with MongoDB tracking and admin management.",
+  "repository": "https://github.com/yourusername/tele_vote_bot",
+  "keywords": ["telegram", "bot", "giveaway", "voting", "heroku"],
+  "buildpacks": [
+    { "url": "heroku/python" }
+  ],
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Your Telegram bot token from @BotFather",
+      "required": true
+    },
+    "MONGO_URI": {
+      "description": "Your MongoDB connection string",
+      "required": true
+    },
+    "ADMINS": {
+      "description": "Comma-separated admin Telegram user IDs",
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+aiogram
+motor
+pymongo
+pytz
+apscheduler
+shortuuid
